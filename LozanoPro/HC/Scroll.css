@@ -1,0 +1,39 @@
+body {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: rgb(29, 133, 40);
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  margin-top: 50px;
+}
+
+.item img {
+  display: block;
+  max-width: 100%;
+}
+
+.item {
+  position: relative;
+  display: block;
+  flex: 10 5 0px;
+  transition: transform 1200ms;
+}
+
+.container:focus-within .item,
+.container:hover .item {
+  transform: translateX(-25%);
+}
+
+.item:focus ~ .item,
+.item:hover ~ .item {
+  transform: translateX(25%);
+}
+
+.container .item:focus,
+.container .item:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
